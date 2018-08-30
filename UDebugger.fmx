@@ -1,0 +1,621 @@
+object frmDebug: TfrmDebug
+  Left = 0
+  Top = 0
+  Caption = 'Z80 Registers'
+  ClientHeight = 528
+  ClientWidth = 333
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object lblCaptionAF: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'AF'
+    TabOrder = 23
+  end
+  object lblAF: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 24
+  end
+  object lblBCCaption: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'AF'
+    TabOrder = 15
+  end
+  object lblBC: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 16
+  end
+  object lblDEDescription: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'DE'
+    TabOrder = 17
+  end
+  object lblDE: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 18
+  end
+  object lblHLDescription: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'HL'
+    TabOrder = 4
+  end
+  object lblHL: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 5
+  end
+  object lblIXDescription: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'IX'
+    TabOrder = 21
+  end
+  object lblIX: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 22
+  end
+  object lblIYDescripton: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'IY'
+    TabOrder = 10
+  end
+  object lblIY: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 11
+  end
+  object lblSPDescription: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'SP'
+    TabOrder = 12
+  end
+  object lblSP: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 14
+  end
+  object lblPCDescription: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'PC'
+    TabOrder = 2
+  end
+  object lblPC: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 3
+  end
+  object lblIRDescription: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'IR'
+    TabOrder = 19
+  end
+  object lblIR: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 20
+  end
+  object lblIMMDescription: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 232.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'IMM'
+    TabOrder = 6
+  end
+  object lblIMM: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 232.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 7
+  end
+  object lblIFF1Description: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'IFF1'
+    TabOrder = 8
+  end
+  object lblIFF1: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 9
+  end
+  object lblIFF2Description: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'IFF2'
+    TabOrder = 0
+  end
+  object lblIFF2: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '---'
+    TabOrder = 1
+  end
+  object gbFlags: TGroupBox
+    Position.X = 88.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'FLAGS'
+    TabOrder = 25
+    object lblSFlag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'S'
+      TabOrder = 7
+    end
+    object lblZFlag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 48.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'Z'
+      TabOrder = 4
+    end
+    object lblHFlag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 80.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'H'
+      TabOrder = 5
+    end
+    object lblPFlag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 112.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'P/V'
+      TabOrder = 1
+    end
+    object lblNFlag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 16.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'N'
+      TabOrder = 6
+    end
+    object lblCFlag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 48.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'C'
+      TabOrder = 2
+    end
+    object lblUD5Flag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 80.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'UD5'
+      TabOrder = 3
+    end
+    object lblUD3Flag: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 112.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'UD3'
+      TabOrder = 0
+    end
+  end
+  object btnAddWatch: TButton
+    Position.X = 89.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 22.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'stepperbuttonleft'
+    TabOrder = 29
+    Text = 'Add'
+    OnClick = btnAddWatchClick
+  end
+  object btnDelWatch: TButton
+    Position.X = 111.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 22.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'stepperbuttonright'
+    TabOrder = 27
+    Text = 'Delete'
+  end
+  object lbWatches: TListBox
+    Position.X = 88.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 161.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 30
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 229.000000000000000000
+    Viewport.Height = 157.000000000000000000
+  end
+  object btnPause: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 22.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'pausetoolbutton'
+    TabOrder = 33
+    Text = 'Pause'
+  end
+  object btnPlay: TButton
+    Position.X = 112.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 22.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'playtoolbutton'
+    TabOrder = 32
+    Text = 'Play'
+  end
+  object btnStep: TButton
+    Position.X = 136.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 22.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'forwardtoolbutton'
+    TabOrder = 31
+    Text = 'Play'
+  end
+  object gbNextInstr: TGroupBox
+    Position.X = 8.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 313.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Instruction'
+    TabOrder = 35
+    object lblMemory: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 16.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 81.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claRed
+      Text = '00 00 00 00'
+      TabOrder = 0
+    end
+    object lblInstruction: TLabel
+      Position.X = 97.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 208.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = '???????????'
+      TabOrder = 1
+    end
+  end
+  object gbMemory: TGroupBox
+    Position.X = 8.000000000000000000
+    Position.Y = 368.000000000000000000
+    Size.Width = 313.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Memory'
+    TabOrder = 34
+    object lblRAM0Description: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 16.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'RAM0'
+      TabOrder = 9
+    end
+    object lblRAM0: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 72.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = '00'
+      TabOrder = 11
+    end
+    object lblRAM1: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 72.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = '00'
+      TabOrder = 10
+    end
+    object lblRAM1Description: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 16.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'RAM1'
+      TabOrder = 4
+    end
+    object lblRAM2: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 72.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = '00'
+      TabOrder = 8
+    end
+    object lblRAM2Description: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 16.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'RAM2'
+      TabOrder = 2
+    end
+    object lblRamVideo: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 192.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = '00'
+      TabOrder = 7
+    end
+    object lblRamVideoDescription: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 136.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'VIDEO'
+      TabOrder = 0
+    end
+    object lblRAM4Description: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 136.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'RAM4'
+      TabOrder = 1
+    end
+    object lblRAM4: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 192.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = '00'
+      TabOrder = 5
+    end
+    object lblRAM3: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 192.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = '00'
+      TabOrder = 6
+    end
+    object lblRAM3Description: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 136.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'RAM3'
+      TabOrder = 3
+    end
+  end
+  object cbBreak: TComboBox
+    Position.X = 144.000000000000000000
+    Position.Y = 486.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 36
+  end
+  object btnAddBreak: TButton
+    Position.X = 88.000000000000000000
+    Position.Y = 486.000000000000000000
+    Size.Width = 22.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'additembutton'
+    TabOrder = 28
+    Text = 'Add'
+  end
+  object btnDelBreak: TButton
+    Position.X = 112.000000000000000000
+    Position.Y = 486.000000000000000000
+    Size.Width = 22.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'deleteitembutton'
+    TabOrder = 26
+    Text = 'Delete'
+  end
+  object cbBreakPoint: TCheckBox
+    Position.X = 8.000000000000000000
+    Position.Y = 487.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = 'Break'
+  end
+end

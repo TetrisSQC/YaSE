@@ -1,0 +1,681 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Condition="Exists('$(BDS)\bin\CodeGear.Deployment.targets')" Project="$(BDS)\bin\CodeGear.Deployment.targets"/>
+    <ProjectExtensions>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <PropertyGroup>
+        <DeviceId Condition="'$(Platform)'=='Android'">0123456789ABCDEF</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice32'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSSimulator'">35F590FA-966B-48D9-A04E-6922F1275687</DeviceId>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(Platform)'=='Win64'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice32'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win32'">
+        <DeployFile Include="shader.fs" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase\</RemoteDir>
+            <RemoteName>shader.fs</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Win32\Debug\Yase.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase\</RemoteDir>
+            <RemoteName>Yase.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='OSX32'">
+        <DeployFile Include="Resources\Roms\dm90_en.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>dm90_en.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dg88.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>dg88.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\didaktik 90.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>didaktik 90.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_3.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus2a_3.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_0.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus2a_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\sebasic.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>sebasic.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp1.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>scorp1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dm91.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>dm91.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\zx128_0.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>zx128_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dm90_en.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>dm90_en.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dg89.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>dg89.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Macos\libSDL2.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>libSDL2.dylib</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_1.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus3_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_0.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus2a_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\zx128_1.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>zx128_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dg89.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>dg89.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_2.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus3_2.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\delphi_PROJECTICNS.icns" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>Yase.icns</RemoteName>
+            <DeployClass>ProjectOSXResource</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dg87.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>dg87.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgsqlite3.dylib">
+            <RemoteDir>Yase.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgsqlite3.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_3.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus3_3.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp2.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>scorp2.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp3.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>scorp3.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\zx128_0.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>zx128_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
+            <RemoteDir>Yase.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Win32\Debug\The Way Of The Exploding Fist (Dro Soft).tzx" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>The Way Of The Exploding Fist (Dro Soft).tzx</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_1.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus2a_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dg87.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>dg87.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\sebasic.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>sebasic.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\128TR.ROM" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>128TR.ROM</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\spectrum.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>spectrum.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="shader.fs" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>shader.fs</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\spectrum.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>spectrum.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\didaktik 90.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>didaktik 90.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Debug\Yase" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>Yase</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\trdos.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>trdos.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dm93.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>dm93.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Macos\libSDL.dylib" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libSDL.dylib</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp0.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>scorp0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_2.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus2a_2.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2_0.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus2_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_2.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus3_2.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Debug\Yase.rsm" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>Yase.rsm</RemoteName>
+            <DeployClass>DebugSymbols</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\zx128_1.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>zx128_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_3.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus2a_3.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\trdos.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>trdos.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\tc2048.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>tc2048.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Debug\Yase.info.plist" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectOSXInfoPList</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_0.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus3_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dg88.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>dg88.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_1.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus3_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_2.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus2a_2.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Macos\libSDL.dylib" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libSDL.dylib</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Debug\Yase.entitlements" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\..\</RemoteDir>
+            <RemoteName>Yase.entitlements</RemoteName>
+            <DeployClass>ProjectOSXEntitlements</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp2.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>scorp2.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\128TR.ROM" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>128TR.ROM</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp3.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>scorp3.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\tc2048.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>tc2048.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2_0.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus2_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp0.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>scorp0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\scorp1.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>scorp1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2_1.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus2_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_3.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus3_3.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dm93.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>dm93.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus3_0.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>plus3_0.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2_1.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus2_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\dm91.rom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Yase.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>dm91.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Yase.icns" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>Yase.icns</RemoteName>
+            <DeployClass>ProjectOSXResource</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Resources\Roms\plus2a_1.rom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Yase.app\Contents\Resources\</RemoteDir>
+            <RemoteName>plus2a_1.rom</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Android'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSSimulator'">
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib">
+            <RemoteDir>Yase.app\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libPCRE.dylib">
+            <RemoteDir>Yase.app\</RemoteDir>
+            <RemoteName>libPCRE.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,192 @@
+object frmAddWatch: TfrmAddWatch
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 202
+  ClientWidth = 458
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object gbMemorywatch: TGroupBox
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 95.000000000000000000
+    Size.PlatformDefault = False
+    Text = '&Memory Address '
+    TabOrder = 0
+    object rbBC: TRadioButton
+      Position.X = 16.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = '[BC]'
+    end
+    object rbDE: TRadioButton
+      Position.X = 16.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = '[DE]'
+    end
+    object rbHL: TRadioButton
+      Position.X = 16.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = '[HL]'
+    end
+    object rbIY: TRadioButton
+      Position.X = 96.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = '[IY+nn]'
+    end
+    object rbNNNN: TRadioButton
+      Position.X = 96.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = '[nnnn]'
+    end
+    object rbIX: TRadioButton
+      Position.X = 96.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = '[IX+nn]'
+    end
+  end
+  object gbView: TGroupBox
+    Position.X = 200.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 95.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'View'
+    TabOrder = 2
+    object rbHexy: TRadioButton
+      Position.X = 24.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 85.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Hexa'
+    end
+    object rbDecimal: TRadioButton
+      Position.X = 24.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 85.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Decimal'
+    end
+    object rbBinary: TRadioButton
+      Position.X = 24.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 85.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Binary'
+    end
+  end
+  object gbType: TGroupBox
+    Position.X = 328.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 95.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Type'
+    TabOrder = 1
+    object rbWordPtr: TRadioButton
+      Position.X = 24.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 85.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'word ptr'
+    end
+    object rbBytePtr: TRadioButton
+      Position.X = 24.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 85.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'byte ptr'
+    end
+  end
+  object GroupBox1: TGroupBox
+    Position.X = 8.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'GroupBox1'
+    TabOrder = 3
+    object Label1: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 27.000000000000000000
+      Size.Width = 110.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Address (Hex)'
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 51.000000000000000000
+      Size.Width = 110.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Desloc (Hex)'
+      TabOrder = 0
+    end
+    object edAddr: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Position.X = 128.000000000000000000
+      Position.Y = 24.000000000000000000
+      OnKeyDown = edAddrKeyDown
+    end
+    object edDesloc: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 2
+      Position.X = 128.000000000000000000
+      Position.Y = 48.000000000000000000
+      OnKeyDown = edAddrKeyDown
+    end
+  end
+  object btnOk: TButton
+    ModalResult = 1
+    Position.X = 264.000000000000000000
+    Position.Y = 168.000000000000000000
+    TabOrder = 5
+    Text = 'Ok'
+  end
+  object btnCancel: TButton
+    ModalResult = 2
+    Position.X = 352.000000000000000000
+    Position.Y = 168.000000000000000000
+    TabOrder = 4
+    Text = 'Cancel'
+  end
+end

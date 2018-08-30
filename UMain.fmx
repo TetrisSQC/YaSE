@@ -1,0 +1,231 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Main'
+  Color = claNull
+  ClientHeight = 734
+  ClientWidth = 934
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = Form3DDestroy
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
+  OnResize = Form3DResize
+  DesignerMasterStyle = 0
+  object tmrMain: TTimer
+    Interval = 10
+    OnTimer = tmrMainTimer
+    Left = 304
+    Top = 224
+  end
+  object mmMain: TMainMenu
+    Left = 456
+    Top = 352
+    object mnuMain: TMenuItem
+      Locked = True
+      Text = 'YaSE'
+      object mnuAbout: TMenuItem
+        Locked = True
+        Text = 'About YaSE'
+      end
+      object mnuSeparator: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object mnuOptions: TMenuItem
+        Locked = True
+        Text = 'Preferences ...'
+      end
+      object mnuSeparator1: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object mnuServices: TMenuItem
+        Tag = -99
+        Locked = True
+        Text = 'Services'
+      end
+      object mnuSeparator2: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object mnuHideApp: TMenuItem
+        Locked = True
+        ShortCut = 4168
+        Text = 'Hide YaSE'
+        OnClick = mnuHideAppClick
+      end
+      object mnuHideOthers: TMenuItem
+        Locked = True
+        ShortCut = 36936
+        Text = 'Hide Others'
+        OnClick = mnuHideOthersClick
+      end
+      object mnuShowAll: TMenuItem
+        Enabled = False
+        Locked = True
+        Text = 'Show All'
+        OnClick = mnuShowAllClick
+      end
+      object mnuSeparator3: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object mnuQuit: TMenuItem
+        Locked = True
+        ShortCut = 32883
+        Text = 'Quit YaSE'
+        OnClick = mnuQuitClick
+      end
+    end
+    object mnuFile: TMenuItem
+      Text = 'File'
+      object mnuOpenSnapshot: TMenuItem
+        Locked = True
+        Text = 'Open File...'
+        OnClick = mnuOpenSnapshotClick
+      end
+      object mnuSaveSnapshot: TMenuItem
+        Locked = True
+        Text = 'Save Snapshot...'
+        OnClick = mnuSaveSnapshotClick
+      end
+      object MenuItem1: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object mnuReset: TMenuItem
+        Locked = True
+        Text = 'Reset'
+        OnClick = mnuResetClick
+      end
+    end
+    object mnuView: TMenuItem
+      Text = 'View'
+      object mnuDistortion: TMenuItem
+        Action = actDistortion
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object mnuScanline: TMenuItem
+        Action = actScanline
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object mnuFlicker: TMenuItem
+        Action = actFlicker
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object mnuVignette: TMenuItem
+        Action = actVignette
+        Enabled = True
+        Locked = True
+        ImageIndex = -1
+      end
+      object mnuPixelshift: TMenuItem
+        Locked = True
+        Text = 'Pixelshift'
+        object mnuNone: TMenuItem
+          Action = actNoPixelShift
+          Enabled = True
+          Locked = True
+          ImageIndex = -1
+        end
+        object mnuHylian: TMenuItem
+          Action = actHylian
+          Enabled = True
+          Locked = True
+          ImageIndex = -1
+        end
+        object mnuSinus: TMenuItem
+          Action = actSinus
+          Enabled = True
+          Locked = True
+          ImageIndex = -1
+        end
+      end
+      object mnuDebugger: TMenuItem
+        Locked = True
+        Text = 'Debugger'
+        OnClick = mnuDebuggerClick
+      end
+    end
+    object mnuHelp: TMenuItem
+      Text = 'Help'
+    end
+  end
+  object rectVideo: TRectangle3D
+    WrapMode = Original
+    Position.X = 462.003692626953100000
+    Position.Y = 368.998535156250000000
+    Position.Z = -1.000000000000000000
+    RotationAngle.Y = 0.000152587890625000
+    Width = 655.655822753906300000
+    Height = 401.529357910156300000
+    Depth = 1.000764846801758000
+    Projection = Screen
+    CornerType = Round
+    Flatness = 1.000000000000000000
+    Sides = [Front, Back, Shaft]
+    Quanternion = '(0,-2.12929158749375E-8,0,-0.999999046325684)'
+  end
+  object alMain: TActionList
+    Left = 464
+    Top = 360
+    object actDistortion: TAction
+      Text = 'Radial Distortion'
+      OnExecute = actDistortionExecute
+      OnUpdate = actDistortionUpdate
+    end
+    object actFlicker: TAction
+      Text = 'Screen Flicker'
+      OnExecute = actFlickerExecute
+      OnUpdate = actFlickerUpdate
+    end
+    object actVignette: TAction
+      Text = 'Vignette'
+      OnExecute = actVignetteExecute
+      OnUpdate = actVignetteUpdate
+    end
+    object actScanline: TAction
+      Text = 'Scanline'
+      OnExecute = actScanlineExecute
+      OnUpdate = actScanlineUpdate
+    end
+    object actNoPixelShift: TAction
+      Category = 'Pixelshift'
+      Text = 'None'
+      OnExecute = actNoPixelShiftExecute
+      OnUpdate = actNoPixelShiftUpdate
+    end
+    object actHylian: TAction
+      Category = 'Pixelshift'
+      Text = 'Hylian'
+      OnExecute = actHylianExecute
+      OnUpdate = actHylianUpdate
+    end
+    object actSinus: TAction
+      Category = 'Pixelshift'
+      Text = 'Sinus'
+      OnExecute = actSinusExecute
+      OnUpdate = actSinusUpdate
+    end
+  end
+  object dlgOpen: TOpenDialog
+    Filter = 
+      'Snapshots (*.sna, *.z80)|*.sna;*.z80|Tapes (*.tap, *.tzx)|*.tap;' +
+      '*.tzx|All Files (*.*)|*.*'
+    Left = 472
+    Top = 368
+  end
+  object dlgSave: TSaveDialog
+    Left = 480
+    Top = 376
+  end
+end
